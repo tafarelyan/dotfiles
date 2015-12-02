@@ -23,8 +23,7 @@ call vundle#end()
 " General
 """"""""""""""""""""""""""""""""
 " Enable filetype plugins
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 " The god key
 let mapleader="ç"
