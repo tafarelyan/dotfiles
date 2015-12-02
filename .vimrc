@@ -13,6 +13,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Plugins
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/nerdtree'
 Plugin 'xolox/vim-notes'
 Plugin 'xolox/vim-misc'
 
@@ -30,6 +31,7 @@ let mapleader="ç"
 
 " Fast saving
 nmap <leader>w :w!<cr>
+nmap <leader>q :qall<cr>
 
 
 """"""""""""""""""""""""""""""""
@@ -43,9 +45,20 @@ set relativenumber
 
 
 """"""""""""""""""""""""""""""""
+" NERDTree settings
+""""""""""""""""""""""""""""""""
+" Toggle nerdtree with F10
+map <F10> :NERDTreeToggle<CR>
+
+" Current file in nerdtree
+map <F9> :NERDTreeFind<cr>
+
+
+""""""""""""""""""""""""""""""""
 " Files, backups and undo
 """"""""""""""""""""""""""""""""
 " I hate swapfile, so I will turn it off
+set nobackup
 set noswapfile
 
 
