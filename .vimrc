@@ -14,8 +14,11 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugins
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
 Plugin 'xolox/vim-notes'
 Plugin 'xolox/vim-misc'
+Plugin 'christoomey/vim-tmux-navigator'
 
 call vundle#end()
 
@@ -29,19 +32,32 @@ filetype plugin indent on
 " The god key
 let mapleader="ç"
 
-" Fast saving
-nmap <leader>w :w!<cr>
+" Multiple screens
 nmap <leader>q :qall<cr>
+nmap <leader>w :update<cr>
+nmap <leader>gs :Gstatus<cr>
+nmap <leader>gc :Gcommit<cr>
+nmap <leader>gp :Gpush<cr>
 
+""""""""""""""""""""""""""""""""
+" Personalized
+""""""""""""""""""""""""""""""""
+" Comment the line (Python)
+nmap <leader>c $i#<esc>
 
 """"""""""""""""""""""""""""""""
 " VIM UI
 """"""""""""""""""""""""""""""""
 " Always show current position
+set number
+set numberwidth=5
 set ruler
 
 " I got the sick moves man
 set relativenumber
+
+"Always show the status line
+set laststatus=2
 
 
 """"""""""""""""""""""""""""""""
@@ -49,9 +65,8 @@ set relativenumber
 """"""""""""""""""""""""""""""""
 " Toggle nerdtree with F10
 map <F10> :NERDTreeToggle<CR>
-
 " Current file in nerdtree
-map <F9> :NERDTreeFind<cr>
+map <F9> :NERDTreeFind<CR>
 
 
 """"""""""""""""""""""""""""""""
@@ -72,14 +87,17 @@ set sts=4
 
 
 """"""""""""""""""""""""""""""""
-" Status Line 
+" CtrlP shorcut
 """"""""""""""""""""""""""""""""
-"Always show the status line
-set laststatus=2
+" Too lazy to type :CtrlP
+map <leader>p :CtrlP<cr>
 
-"Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 
+""""""""""""""""""""""""""""""""
+" Vim Notes
+""""""""""""""""""""""""""""""""
+" Making note taking easier
+map <leader>n :Note<cr>
 
 """"""""""""""""""""""""""""""""
 " Split navigation
@@ -93,15 +111,9 @@ nnoremap <c-h> <c-w><c-h>
 
 
 """"""""""""""""""""""""""""""""
-" Vim notes options
-""""""""""""""""""""""""""""""""
-let g:notes_directories = ['~/Dropbox/Notes']
-
-
-""""""""""""""""""""""""""""""""
 " Edit .vimrc in split
 """"""""""""""""""""""""""""""""
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 
@@ -116,15 +128,3 @@ inoremap <Up> <nop>
 inoremap <Down> <nop>
 inoremap <Left> <nop>
 inoremap <Right> <nop>
-
-
-""""""""""""""""""""""""""""""""
-" Helper functions
-""""""""""""""""""""""""""""""""
-" Returns true if paste mode is enabled
-function! HasPaste()
-	if &paste
-		return 'PASTE MODE '
-	en
-	return ''
-endfunction
