@@ -7,7 +7,6 @@ filetype off
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
 "Must have
 Plugin 'VundleVim/Vundle.vim'
 
@@ -39,11 +38,18 @@ nmap <leader>gs :Gstatus<cr>
 nmap <leader>gc :Gcommit<cr>
 nmap <leader>gp :Gpush<cr>
 
+" No annoying sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+
 """"""""""""""""""""""""""""""""
 " Personalized
 """"""""""""""""""""""""""""""""
 " Comment the line (Python)
-nmap <leader>c $i#<esc>
+nmap <leader>c 0i# <esc>
+
 
 """"""""""""""""""""""""""""""""
 " VIM UI
@@ -74,6 +80,7 @@ map <F9> :NERDTreeFind<CR>
 """"""""""""""""""""""""""""""""
 " I hate swapfile, so I will turn it off
 set nobackup
+set nowb
 set noswapfile
 
 
@@ -90,14 +97,16 @@ set sts=4
 " CtrlP shorcut
 """"""""""""""""""""""""""""""""
 " Too lazy to type :CtrlP
-map <leader>p :CtrlP<cr>
+nmap <leader>p :CtrlP<cr>
 
 
 """"""""""""""""""""""""""""""""
 " Vim Notes
 """"""""""""""""""""""""""""""""
 " Making note taking easier
-map <leader>n :Note<cr>
+nmap <leader>n :Note 
+let g:notes_directories = ['~/Dropbox/notes']
+
 
 """"""""""""""""""""""""""""""""
 " Split navigation
