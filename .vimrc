@@ -11,13 +11,14 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Plugins
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'xolox/vim-notes'
 Plugin 'xolox/vim-misc'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'tpope/vim-surround'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 
@@ -64,6 +65,12 @@ set relativenumber
 
 "Always show the status line
 set laststatus=2
+
+
+""""""""""""""""""""""""""""""""
+" YCM settings
+""""""""""""""""""""""""""""""""
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 
 """"""""""""""""""""""""""""""""
@@ -122,7 +129,7 @@ nnoremap <c-h> <c-w><c-h>
 """"""""""""""""""""""""""""""""
 " Edit .vimrc in split
 """"""""""""""""""""""""""""""""
-nnoremap <leader>ev :e $MYVIMRC<cr>
+nnoremap <leader>ev :vsp $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 
