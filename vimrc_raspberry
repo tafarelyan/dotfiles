@@ -1,0 +1,75 @@
+""""""""""""""""""""""""""""""""
+" General
+""""""""""""""""""""""""""""""""
+" Enable filetype plugins
+filetype plugin indent on
+
+" The god key
+let mapleader="ç"
+
+" Saving as sudo
+nmap <leader>w :w !sudo tee %
+
+
+""""""""""""""""""""""""""""""""
+" VIM UI
+""""""""""""""""""""""""""""""""
+" Always show current position
+set number
+set numberwidth=5
+set ruler
+
+" I got the sick moves man
+set relativenumber
+
+"Always show the status line
+set laststatus=2
+
+
+""""""""""""""""""""""""""""""""
+" Files, backups and undo
+""""""""""""""""""""""""""""""""
+" I hate swapfile, so I will turn it off
+set nobackup
+set nowb
+set noswapfile
+
+
+""""""""""""""""""""""""""""""""
+" Text, tab and indent related
+""""""""""""""""""""""""""""""""
+" 1 tab == 4 spaces
+set shiftwidth=4
+set tabstop=4
+set sts=4
+
+
+""""""""""""""""""""""""""""""""
+" Split navigation
+""""""""""""""""""""""""""""""""
+set splitbelow
+set splitright
+nnoremap <c-j> <c-w><c-j>
+nnoremap <c-k> <c-w><c-k>
+nnoremap <c-l> <c-w><c-l>
+nnoremap <c-h> <c-w><c-h>
+
+
+""""""""""""""""""""""""""""""""
+" Edit .vimrc in split
+""""""""""""""""""""""""""""""""
+nnoremap <leader>ev :vsp $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+
+""""""""""""""""""""""""""""""""
+" Don't be a vimnoob
+""""""""""""""""""""""""""""""""
+nnoremap <Up> <nop>
+nnoremap <Down> <nop>
+nnoremap <Left> <nop>
+nnoremap <Right> <nop>
+inoremap <Up> <nop>
+inoremap <Down> <nop>
+inoremap <Left> <nop>
+inoremap <Right> <nop>
