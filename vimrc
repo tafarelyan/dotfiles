@@ -17,7 +17,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'xolox/vim-notes'
 Plugin 'xolox/vim-misc'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'tpope/vim-surround'
 Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
