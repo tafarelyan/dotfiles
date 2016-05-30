@@ -41,7 +41,6 @@ nmap <leader>gs :Gstatus<cr>
 nmap <leader>gc :Gcommit<cr>
 nmap <leader>gp :Gpush<cr>
 
-
 " PEP 8 Python
 set shiftwidth=4
 set tabstop=4
@@ -70,18 +69,23 @@ set noswapfile
 
 
 """"""""""""""""""""""""""""""""
-" YCM settings
+" Plugin Settings
 """"""""""""""""""""""""""""""""
+" Autoclose YCM helper window after user
 let g:ycm_autoclose_preview_window_after_completion = 1
 
-
-""""""""""""""""""""""""""""""""
-" NERDTree settings
-""""""""""""""""""""""""""""""""
 " Toggle nerdtree with F10
 map <F10> :NERDTreeToggle<CR>
+
 " Current file in nerdtree
 map <F9> :NERDTreeFind<CR>
+
+" Too lazy to type :CtrlP
+nmap <leader>p :CtrlP<cr>
+
+" Making note taking easier
+nmap <leader>n :Note 
+let g:notes_directories = ['~/Dropbox/notes']
 
 
 """"""""""""""""""""""""""""""""
@@ -90,21 +94,6 @@ map <F9> :NERDTreeFind<CR>
 autocmd filetype html,css,htmldjango,javascript set shiftwidth=2 tabstop=2 softtabstop=2
 
 autocmd filetype python set omnifunc=pythoncomplete#Complete
-
-"
-""""""""""""""""""""""""""""""""
-" CtrlP shorcut
-""""""""""""""""""""""""""""""""
-" Too lazy to type :CtrlP
-nmap <leader>p :CtrlP<cr>
-
-
-""""""""""""""""""""""""""""""""
-" Vim Notes
-""""""""""""""""""""""""""""""""
-" Making note taking easier
-nmap <leader>n :Note 
-let g:notes_directories = ['~/Dropbox/notes']
 
 
 """"""""""""""""""""""""""""""""
