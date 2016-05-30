@@ -21,12 +21,15 @@ Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 
+" Enable filetype plugins
+filetype plugin indent on
+
 
 """"""""""""""""""""""""""""""""
 " General
 """"""""""""""""""""""""""""""""
-" Enable filetype plugins
-filetype plugin indent on
+" Auto read file when changed from outside
+set autoread
 
 " The god key
 let mapleader="ç"
@@ -39,9 +42,13 @@ nmap <leader>gc :Gcommit<cr>
 nmap <leader>gp :Gpush<cr>
 
 
-""""""""""""""""""""""""""""""""
-" VIM UI
-""""""""""""""""""""""""""""""""
+" PEP 8 Python
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set expandtab
+set autoindent
+
 " Always show current position
 set number
 set numberwidth=5
@@ -52,6 +59,14 @@ set relativenumber
 
 "Always show the status line
 set laststatus=2
+
+"Encoding
+set encoding=utf-8
+
+" Files, backups and undo
+set nobackup
+set nowb
+set noswapfile
 
 
 """"""""""""""""""""""""""""""""
@@ -70,23 +85,13 @@ map <F9> :NERDTreeFind<CR>
 
 
 """"""""""""""""""""""""""""""""
-" Files, backups and undo
+" Filetype specific changes
 """"""""""""""""""""""""""""""""
-" I hate swapfile, so I will turn it off
-set nobackup
-set nowb
-set noswapfile
+autocmd filetype html,css,htmldjango,javascript set shiftwidth=2 tabstop=2 softtabstop=2
 
+autocmd filetype python set omnifunc=pythoncomplete#Complete
 
-""""""""""""""""""""""""""""""""
-" Text, tab and indent related
-""""""""""""""""""""""""""""""""
-" 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
-set sts=4
-
-
+"
 """"""""""""""""""""""""""""""""
 " CtrlP shorcut
 """"""""""""""""""""""""""""""""
