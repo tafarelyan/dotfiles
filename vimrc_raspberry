@@ -1,19 +1,19 @@
 """"""""""""""""""""""""""""""""
 " General
 """"""""""""""""""""""""""""""""
-" Enable filetype plugins
-filetype plugin indent on
+" Auto read file when changed from outside
+set autoread
 
 " The god key
 let mapleader="ç"
 
-" Saving as sudo
-nmap <leader>w :w !sudo tee %
+" PEP 8 Python
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set expandtab
+set autoindent
 
-
-""""""""""""""""""""""""""""""""
-" VIM UI
-""""""""""""""""""""""""""""""""
 " Always show current position
 set number
 set numberwidth=5
@@ -25,23 +25,24 @@ set relativenumber
 "Always show the status line
 set laststatus=2
 
+"Encoding
+set encoding=utf-8
 
-""""""""""""""""""""""""""""""""
 " Files, backups and undo
-""""""""""""""""""""""""""""""""
-" I hate swapfile, so I will turn it off
 set nobackup
 set nowb
 set noswapfile
 
+" Syntax on
+syntax on
+
 
 """"""""""""""""""""""""""""""""
-" Text, tab and indent related
+" Filetype specific changes
 """"""""""""""""""""""""""""""""
-" 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
-set sts=4
+autocmd filetype html,css,htmldjango,javascript set shiftwidth=2 tabstop=2 softtabstop=2
+
+autocmd filetype python set omnifunc=pythoncomplete#Complete
 
 
 """"""""""""""""""""""""""""""""
