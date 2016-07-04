@@ -4,7 +4,7 @@ alias upgrade="sudo apt-get upgrade"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-alias pi="ssh pi@192.168.1.109"
+alias pi="ssh pi@192.168.1.110"
 
 # git
 alias gs="git status -sb"
