@@ -6,6 +6,9 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias pi="ssh pi@192.168.1.109"
 
+# git
+alias gs="git status -sb"
+
 # Config Files
 alias vimrc="vim ~/.vimrc"
 alias vimrcbundles="vim ~/.vimrc.bundles"
