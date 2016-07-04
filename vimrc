@@ -1,31 +1,4 @@
 """"""""""""""""""""""""""""""""
-" Vundle
-""""""""""""""""""""""""""""""""
-set nocompatible
-filetype off
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-"Must have
-Plugin 'VundleVim/Vundle.vim'
-
-" Plugins
-Plugin 'scrooloose/nerdtree'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'xolox/vim-notes'
-Plugin 'xolox/vim-misc'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'Valloric/YouCompleteMe'
-
-call vundle#end()
-
-" Enable filetype plugins
-filetype plugin indent on
-
-
-""""""""""""""""""""""""""""""""
 " General
 """"""""""""""""""""""""""""""""
 " Auto read file when changed from outside
@@ -33,6 +6,9 @@ set autoread
 
 " The god key
 let mapleader="ç"
+
+set nocompatible " Use Vim settings, rather than Vi settings 
+set autowrite " Automatically :write before running commands
 
 " Multiple screens
 nmap <leader>q :qall<cr>
@@ -56,7 +32,7 @@ set ruler
 " I got the sick moves man
 set relativenumber
 
-"Always show the status line
+" Set laststatus
 set laststatus=2
 
 "Encoding
@@ -64,9 +40,16 @@ set encoding=utf-8
 
 " Files, backups and undo
 set nobackup
-set nowb
+set nowritebackup
 set noswapfile
 
+set t_Co=16
+
+if filereadable(expand("~/.vimrc.bundles"))
+    source ~/.vimrc.bundles
+endif
+
+filetype plugin indent on
 
 """"""""""""""""""""""""""""""""
 " Plugin Settings
@@ -82,10 +65,6 @@ map <F9> :NERDTreeFind<CR>
 
 " Too lazy to type :CtrlP
 nmap <leader>p :CtrlP<cr>
-
-" Making note taking easier
-nmap <leader>n :Note 
-let g:notes_directories = ['~/Dropbox/notes']
 
 
 """"""""""""""""""""""""""""""""
@@ -105,13 +84,6 @@ nnoremap <c-j> <c-w><c-j>
 nnoremap <c-k> <c-w><c-k>
 nnoremap <c-l> <c-w><c-l>
 nnoremap <c-h> <c-w><c-h>
-
-
-""""""""""""""""""""""""""""""""
-" Edit .vimrc in split
-""""""""""""""""""""""""""""""""
-nnoremap <leader>ev :vsp $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
 
 
 """"""""""""""""""""""""""""""""

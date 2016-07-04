@@ -1,5 +1,0 @@
-alias update="sudo apt-get update"
-alias upgrade="sudo apt-get upgrade"
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
