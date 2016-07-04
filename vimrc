@@ -3,7 +3,6 @@
 """"""""""""""""""""""""""""""""
 " Auto read file when changed from outside
 set autoread
-
 " The god key
 let mapleader="ç"
 
@@ -43,13 +42,16 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-set t_Co=16
-
 if filereadable(expand("~/.vimrc.bundles"))
     source ~/.vimrc.bundles
 endif
 
 filetype plugin indent on
+
+" Solarized theme
+set background=dark
+colorscheme solarized
+set t_Co=16
 
 """"""""""""""""""""""""""""""""
 " Plugin Settings
@@ -65,6 +67,9 @@ map <F9> :NERDTreeFind<CR>
 
 " Too lazy to type :CtrlP
 nmap <leader>p :CtrlP<cr>
+
+" Change solarized background color
+call togglebg#map("<F5>")
 
 
 """"""""""""""""""""""""""""""""
