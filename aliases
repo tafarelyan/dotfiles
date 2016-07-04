@@ -1,0 +1,12 @@
+# Unix
+alias update="sudo apt-get update"
+alias upgrade="sudo apt-get upgrade"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias pi="ssh pi@192.168.1.109"
+
+# Config Files
+alias vimrc="vim ~/.vimrc"
+alias vimrcbundles="vim ~/.vimrc.bundles"
+alias zshrc="vim ~/.zshrc"
