@@ -4,7 +4,7 @@
 " Auto read file when changed from outside
 set autoread
 " The god key
-let mapleader="ç"
+map <space> <leader>
 
 set nocompatible " Use Vim settings, rather than Vi settings 
 set autowrite " Automatically :write before running commands
