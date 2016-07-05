@@ -1,10 +1,7 @@
 # Unix
-alias update="sudo apt-get update"
-alias upgrade="sudo apt-get upgrade"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-alias pi="ssh pi@192.168.1.110"
 
 # git
 alias gs="git status -sb"
@@ -13,3 +10,6 @@ alias gs="git status -sb"
 alias vimrc="vim ~/.vimrc"
 alias vimrcbundles="vim ~/.vimrc.bundles"
 alias zshrc="vim ~/.zshrc"
+
+# Include custom aliases
+[[ -f ~/.aliases.local ]] && source ~/.aliases.local
