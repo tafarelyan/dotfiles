@@ -6,6 +6,7 @@ set autoread
 " The god key
 let mapleader=','
 
+set backspace=2 " Backspace deletes like most programs in insert mode
 set nocompatible " Use Vim settings, rather than Vi settings 
 set autowrite " Automatically :write before running commands
 
@@ -51,6 +52,7 @@ filetype plugin indent on
 " Solarized theme
 set background=dark
 colorscheme solarized
+syntax on
 set t_Co=16
 
 """"""""""""""""""""""""""""""""
@@ -71,6 +73,10 @@ nmap <leader>p :CtrlP<cr>
 " Change solarized background color
 call togglebg#map("<F5>")
 
+" Airline customization
+let g:airline_section_b = '%{strftime("%c")}'
+let g:airline_section_y = 'BN: %{bufnr("%")}'
+
 
 """"""""""""""""""""""""""""""""
 " Filetype specific changes
@@ -89,6 +95,13 @@ nnoremap <c-j> <c-w><c-j>
 nnoremap <c-k> <c-w><c-k>
 nnoremap <c-l> <c-w><c-l>
 nnoremap <c-h> <c-w><c-h>
+
+
+""""""""""""""""""""""""""""""""
+" Easy editing .vimrc
+""""""""""""""""""""""""""""""""
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 
 
 """"""""""""""""""""""""""""""""
