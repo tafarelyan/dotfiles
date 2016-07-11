@@ -1,6 +1,6 @@
 """"""""""""""""""""""""""""""""
-" General
-""""""""""""""""""""""""""""""""
+" General 
+"""""""""""""""""""""""""""""""" 
 " Auto read file when changed from outside
 set autoread
 " The god key
@@ -53,6 +53,7 @@ set background=dark
 colorscheme solarized
 set t_Co=16
 
+
 """"""""""""""""""""""""""""""""
 " Plugin Settings
 """"""""""""""""""""""""""""""""
@@ -67,9 +68,6 @@ map <F9> :NERDTreeFind<CR>
 
 " Too lazy to type :CtrlP
 nmap <leader>p :CtrlP<cr>
-
-" Change solarized background color
-call togglebg#map("<F5>")
 
 
 """"""""""""""""""""""""""""""""
@@ -89,6 +87,13 @@ nnoremap <c-j> <c-w><c-j>
 nnoremap <c-k> <c-w><c-k>
 nnoremap <c-l> <c-w><c-l>
 nnoremap <c-h> <c-w><c-h>
+
+
+""""""""""""""""""""""""""""""""
+" Edit vimrc quickly
+""""""""""""""""""""""""""""""""
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 
 
 """"""""""""""""""""""""""""""""
