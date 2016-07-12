@@ -1,6 +1,6 @@
 """"""""""""""""""""""""""""""""
-" General
-""""""""""""""""""""""""""""""""
+" General 
+"""""""""""""""""""""""""""""""" 
 " Auto read file when changed from outside
 set autoread
 " The god key
@@ -55,6 +55,7 @@ colorscheme solarized
 syntax on
 set t_Co=16
 
+
 """"""""""""""""""""""""""""""""
 " Plugin Settings
 """"""""""""""""""""""""""""""""
@@ -70,8 +71,6 @@ map <F9> :NERDTreeFind<CR>
 " Too lazy to type :CtrlP
 nmap <leader>p :CtrlP<cr>
 
-" Change solarized background color
-call togglebg#map("<F5>")
 
 " Airline customization
 let g:airline_section_b = '%{strftime("%c")}'
@@ -98,7 +97,7 @@ nnoremap <c-h> <c-w><c-h>
 
 
 """"""""""""""""""""""""""""""""
-" Easy editing .vimrc
+" Edit vimrc quickly
 """"""""""""""""""""""""""""""""
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
