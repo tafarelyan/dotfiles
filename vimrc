@@ -42,7 +42,6 @@ set encoding=utf-8
 set nobackup
 set nowritebackup
 set noswapfile
-
 if filereadable(expand("~/.vimrc.bundles"))
     source ~/.vimrc.bundles
 endif
@@ -94,13 +93,6 @@ nnoremap <c-j> <c-w><c-j>
 nnoremap <c-k> <c-w><c-k>
 nnoremap <c-l> <c-w><c-l>
 nnoremap <c-h> <c-w><c-h>
-
-
-""""""""""""""""""""""""""""""""
-" Edit vimrc quickly
-""""""""""""""""""""""""""""""""
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
 
 
 """"""""""""""""""""""""""""""""
