@@ -52,7 +52,7 @@ filetype plugin indent on
 set background=dark
 colorscheme solarized
 syntax on
-set t_Co=16
+set t_Co=32
 
 
 """"""""""""""""""""""""""""""""
