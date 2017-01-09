@@ -74,15 +74,3 @@ source ~/.aliases
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-
-# dircolors
-eval `dircolors /home/tafarel/.dir_colors/dircolors`
-
-alias tmux="TERM=screen-256color-bce tmux"
-
-# Virtualenvwrapper settings
-export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
-source /usr/local/bin/virtualenvwrapper.sh
