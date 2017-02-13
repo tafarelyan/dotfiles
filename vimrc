@@ -58,9 +58,6 @@ set t_Co=32
 """"""""""""""""""""""""""""""""
 " Plugin Settings
 """"""""""""""""""""""""""""""""
-" Autoclose YCM helper window after user
-let g:ycm_autoclose_preview_window_after_completion = 1
-
 " Toggle nerdtree with F10
 map <F10> :NERDTreeToggle<CR>
 
@@ -80,8 +77,6 @@ let g:airline_section_y = 'BN: %{bufnr("%")}'
 " Filetype specific changes
 """"""""""""""""""""""""""""""""
 autocmd filetype html,css,htmldjango,javascript set shiftwidth=2 tabstop=2 softtabstop=2
-
-autocmd filetype python set omnifunc=pythoncomplete#Complete
 
 
 """"""""""""""""""""""""""""""""
