@@ -1,4 +1,38 @@
 """"""""""""""""""""""""""""""""
+" Vundle 
+"""""""""""""""""""""""""""""""" 
+set nocompatible                " be iMproved, required
+filetype off                    " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Must have
+Plugin 'VundleVim/Vundle.vim'
+
+" Plugins
+Plugin 'scrooloose/nerdtree'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+" Colorschemes
+Plugin 'altercation/vim-colors-solarized'
+
+" Python
+Plugin 'nvie/vim-flake8'
+Plugin 'hynek/vim-python-pep8-indent'
+
+call vundle#end()
+filetype plugin indent on
+
+
+""""""""""""""""""""""""""""""""
 " General 
 """""""""""""""""""""""""""""""" 
 " Auto read file when changed from outside
@@ -42,11 +76,6 @@ set encoding=utf-8
 set nobackup
 set nowritebackup
 set noswapfile
-if filereadable(expand("~/.vimrc.bundles"))
-    source ~/.vimrc.bundles
-endif
-
-filetype plugin indent on
 
 " Solarized theme
 set background=dark
