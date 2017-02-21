@@ -110,7 +110,12 @@ let g:airline_section_y = 'BN: %{bufnr("%")}'
 """"""""""""""""""""""""""""""""
 autocmd filetype html,css,htmldjango,javascript set shiftwidth=2 tabstop=2 softtabstop=2
 
-autocmd filetype python set omnifunc=pythoncomplete#Complete
+
+""""""""""""""""""""""""""""""""
+" Quick edit .vimrc
+""""""""""""""""""""""""""""""""
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 
 
 """"""""""""""""""""""""""""""""
