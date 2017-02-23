@@ -6,10 +6,5 @@ alias ....="cd ../../.."
 # git
 alias gs="git status -sb"
 
-# Config Files
-alias vimrc="vim ~/.vimrc"
-alias vimrcbundles="vim ~/.vimrc.bundles"
-alias zshrc="vim ~/.zshrc"
-
 # Include custom aliases
-[[ -f ~/.aliases.local ]] && source ~/.aliases.local
+alias home-server="ssh tafarel@192.168.1.109"
