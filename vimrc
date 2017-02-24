@@ -99,6 +99,8 @@ map <F9> :NERDTreeFind<CR>
 " Too lazy to type :CtrlP
 nmap <leader>p :CtrlP<cr>
 
+" Ignore relative 'venv' folder in CtrlP
+let g:ctrlp_custom_ignore = 'venv'
 
 " Airline customization
 let g:airline_section_b = '%{strftime("%c")}'
