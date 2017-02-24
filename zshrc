@@ -49,15 +49,11 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=()
 
 # User configuration
 
 # export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
-
-source $ZSH/oh-my-zsh.sh
-source ~/.aliases
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -74,3 +70,23 @@ source ~/.aliases
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+source $ZSH/oh-my-zsh.sh
+
+# Aliases
+
+# Unix
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+# git
+alias gs="git status -sb"
+
+# Include custom aliases
+alias home-server="ssh tafarel@192.168.1.109"
+
+# Virtualenvs aliases
+alias cv="python3 -m venv venv"
+alias sv="source venv/bin/activate"
+alias csv="python3 -m venv venv && source venv/bin/activate"
