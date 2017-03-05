@@ -70,6 +70,8 @@ alias gs="git status -sb"
 
 # Include custom aliases
 alias home-server="ssh tafarel@192.168.1.109"
+alias torrents="open -a safari http://192.168.1.109:9091"
+alias plex="open -a safari http://192.168.1.109:32400"
 
 # Virtualenvs aliases
 alias cv="python3 -m venv venv"
