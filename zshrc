@@ -70,6 +70,7 @@ alias gs="git status -sb"
 
 # Include custom aliases
 alias home-server="ssh tafarel@192.168.1.109"
+alias work-server="ssh tyan@semtools.clickbus.com.br"
 alias webserver="open -a safari http://192.168.1.109:8080"
 alias torrents="open -a safari http://192.168.1.109:9091"
 alias plex="open -a safari http://192.168.1.109:32400"
