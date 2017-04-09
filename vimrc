@@ -37,9 +37,6 @@ call plug#end()
 """"""""""""""""""""""""""""""""
 " General 
 """""""""""""""""""""""""""""""" 
-" Common sense
-filetype plugin indent on
-
 " Auto read file when changed from outside
 set autoread
 " The god key
