@@ -17,15 +17,18 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'kien/ctrlp.vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-syntastic/syntastic'
 Plug 'airblade/vim-gitgutter'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 
 " Colorschemes
 Plug 'altercation/vim-colors-solarized'
 
 " Python only plugins
+Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
 Plug 'nvie/vim-flake8', { 'for': 'python' }
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'mitsuhiko/vim-jinja'
@@ -37,18 +40,20 @@ call plug#end()
 """"""""""""""""""""""""""""""""
 " General 
 """""""""""""""""""""""""""""""" 
-" Auto read file when changed from outside
-set autoread
 " The god key
 let mapleader=','
 
 set backspace=2 " Backspace deletes like most programs in insert mode
 set nocompatible " Use Vim settings, rather than Vi settings 
-set autowrite " Automatically :write before running commands
+
+" Better copy & paste
+set pastetoggle=<F2>
+set clipboard=unnamed
 
 " Multiple screens
 nmap <leader>q :qall<cr>
 nmap <leader>w :update<cr>
+nmap <leader>gd :Gdiff<cr>
 nmap <leader>gs :Gstatus<cr>
 nmap <leader>gc :Gcommit<cr>
 nmap <leader>gp :Gpush<cr>
@@ -81,7 +86,7 @@ set noswapfile
 
 " Solarized theme
 set background=dark
-colorscheme solarized
+silent! colorscheme solarized
 syntax on
 set t_Co=32
 
@@ -90,7 +95,7 @@ set t_Co=32
 " Plugin Settings
 """"""""""""""""""""""""""""""""
 " Autoclose YCM helper window after user
-let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_completion=1
 
 " Toggle nerdtree with F10
 map <F10> :NERDTreeToggle<CR>
@@ -102,11 +107,12 @@ map <F9> :NERDTreeFind<CR>
 nmap <leader>p :CtrlP<cr>
 
 " Ignore relative 'venv' folder in CtrlP
-let g:ctrlp_custom_ignore = 'venv'
+let g:ctrlp_custom_ignore='venv'
 
-" Airline customization
-let g:airline_section_b = '%{strftime("%c")}'
-let g:airline_section_y = 'BN: %{bufnr("%")}'
+" Folding Python code
+set foldlevelstart=3
+nnoremap <space> za
+let g:SimpylFold_fold_docstring=0
 
 
 """"""""""""""""""""""""""""""""
