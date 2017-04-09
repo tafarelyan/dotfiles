@@ -1,40 +1,45 @@
 """"""""""""""""""""""""""""""""
-" Vundle 
+" Plug 
 """""""""""""""""""""""""""""""" 
-set nocompatible                " be iMproved, required
-filetype off                    " required
+" auto-install vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" Must have
-Plugin 'VundleVim/Vundle.vim'
+" Specify a directory for plugins
+call plug#begin('~/.vim/plugged')
 
 " Plugins
-Plugin 'scrooloose/nerdtree'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'kien/ctrlp.vim'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'vim-syntastic/syntastic'
+Plug 'airblade/vim-gitgutter'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 
 " Colorschemes
-Plugin 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized'
 
-" Python
-Plugin 'nvie/vim-flake8'
-Plugin 'hynek/vim-python-pep8-indent'
+" Python only plugins
+Plug 'nvie/vim-flake8', { 'for': 'python' }
+Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
+Plug 'mitsuhiko/vim-jinja'
 
-call vundle#end()
-filetype plugin indent on
+" Initialize plugin system
+call plug#end()
 
 
 """"""""""""""""""""""""""""""""
 " General 
 """""""""""""""""""""""""""""""" 
+" Common sense
+filetype plugin indent on
+
 " Auto read file when changed from outside
 set autoread
 " The god key
