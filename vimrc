@@ -22,14 +22,13 @@ Plug 'vim-syntastic/syntastic'
 Plug 'airblade/vim-gitgutter'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-airline/vim-airline'
-Plug 'chrisbra/csv.vim', { 'for': 'csv' }
+Plug 'chrisbra/csv.vim'
 
 " Colorschemes
 Plug 'altercation/vim-colors-solarized'
 
 " Python only plugins
 Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
-Plug 'nvie/vim-flake8', { 'for': 'python' }
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'mitsuhiko/vim-jinja'
 
@@ -43,20 +42,16 @@ call plug#end()
 " The god key
 let mapleader=','
 
-set backspace=2 " Backspace deletes like most programs in insert mode
 set nocompatible " Use Vim settings, rather than Vi settings 
+set backspace=2 " Backspace deletes like most programs in insert mode
 
 " Better copy & paste
 set pastetoggle=<F2>
 set clipboard=unnamed
 
-" Multiple screens
+" General shortcuts
 nmap <leader>q :qall<cr>
 nmap <leader>w :update<cr>
-nmap <leader>gd :Gdiff<cr>
-nmap <leader>gs :Gstatus<cr>
-nmap <leader>gc :Gcommit<cr>
-nmap <leader>gp :Gpush<cr>
 
 " PEP 8 Python
 set shiftwidth=4
@@ -72,9 +67,6 @@ set ruler
 
 " I got the sick moves man
 set relativenumber
-
-" Set laststatus
-set laststatus=2
 
 "Encoding
 set encoding=utf-8
@@ -94,8 +86,17 @@ set t_Co=32
 """"""""""""""""""""""""""""""""
 " Plugin Settings
 """"""""""""""""""""""""""""""""
+" Fugitive shortcuts
+nmap <leader>gs :Gstatus<cr>
+nmap <leader>gd :Gdiff<cr>
+nmap <leader>gc :Gcommit<cr>
+nmap <leader>gp :Gpush<cr>
+
 " Autoclose YCM helper window after user
 let g:ycm_autoclose_preview_window_after_completion=1
+
+" YCM default Python 3
+let g:ycm_python_binary_path='python'
 
 " Toggle nerdtree with F10
 map <F10> :NERDTreeToggle<CR>
@@ -109,10 +110,23 @@ nmap <leader>p :CtrlP<cr>
 " Ignore relative 'venv' folder in CtrlP
 let g:ctrlp_custom_ignore='venv'
 
+" Set laststatus for vim-airline
+set laststatus=2
+
 " Folding Python code
 set foldlevelstart=3
 nnoremap <space> za
 let g:SimpylFold_fold_docstring=0
+
+" Syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 
 """"""""""""""""""""""""""""""""
