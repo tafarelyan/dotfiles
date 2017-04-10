@@ -103,8 +103,9 @@ map <F9> :NERDTreeFind<CR>
 " Too lazy to type :CtrlP
 nmap <leader>p :CtrlP<cr>
 
-" Ignore relative 'venv' folder in CtrlP
-let g:ctrlp_custom_ignore='venv'
+" Ignore irrelevant folders in CtrlP
+set wildignore+=*.pyc,venv
+let g:ctrlp_custom_ignore = '\v[\/]\.git$'
 
 " Set laststatus for vim-airline
 set laststatus=2
