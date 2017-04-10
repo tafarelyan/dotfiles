@@ -45,10 +45,6 @@ let mapleader=','
 set nocompatible " Use Vim settings, rather than Vi settings 
 set backspace=2 " Backspace deletes like most programs in insert mode
 
-" Better copy & paste
-set pastetoggle=<F2>
-set clipboard=unnamed
-
 " General shortcuts
 nmap <leader>q :qall<cr>
 nmap <leader>w :update<cr>
