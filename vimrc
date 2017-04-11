@@ -29,6 +29,7 @@ Plug 'altercation/vim-colors-solarized'
 
 " Python only plugins
 Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
+Plug 'nvie/vim-flake8', { 'for': 'python' }
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'mitsuhiko/vim-jinja'
 
@@ -114,17 +115,6 @@ set laststatus=2
 set foldlevelstart=3
 nnoremap <space> za
 let g:SimpylFold_fold_docstring=0
-
-" Syntastic settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-nnoremap <f7> :lopen<cr>
-nnoremap <f6> :lclose<cr>
 
 
 """"""""""""""""""""""""""""""""
