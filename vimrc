@@ -56,6 +56,8 @@ set softtabstop=4
 set expandtab
 set autoindent
 
+set clipboard=unnamed
+
 " Always show current position
 set number
 set numberwidth=5
