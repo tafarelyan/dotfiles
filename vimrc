@@ -133,6 +133,12 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 
 
 """"""""""""""""""""""""""""""""
+" Buffers navigation
+""""""""""""""""""""""""""""""""
+nnoremap <F5> :buffers<CR>:buffer<Space>
+
+
+""""""""""""""""""""""""""""""""
 " Split navigation
 """"""""""""""""""""""""""""""""
 set splitbelow
@@ -141,6 +147,17 @@ nnoremap <c-j> <c-w><c-j>
 nnoremap <c-k> <c-w><c-k>
 nnoremap <c-l> <c-w><c-l>
 nnoremap <c-h> <c-w><c-h>
+
+
+""""""""""""""""""""""""""""""""
+" Tab navigation
+""""""""""""""""""""""""""""""""
+nnoremap <C-S-tab> :tabprevious<CR>
+nnoremap <C-tab>   :tabnext<CR>
+nnoremap <C-t>     :tabnew<CR>
+inoremap <C-S-tab> <Esc>:tabprevious<CR>i
+inoremap <C-tab>   <Esc>:tabnext<CR>i
+inoremap <C-t>     <Esc>:tabnew<CR>
 
 
 """"""""""""""""""""""""""""""""
