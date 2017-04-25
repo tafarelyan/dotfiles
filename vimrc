@@ -152,12 +152,9 @@ nnoremap <c-h> <c-w><c-h>
 """"""""""""""""""""""""""""""""
 " Tab navigation
 """"""""""""""""""""""""""""""""
-nnoremap <C-S-tab> :tabprevious<CR>
-nnoremap <C-tab>   :tabnext<CR>
-nnoremap <C-t>     :tabnew<CR>
-inoremap <C-S-tab> <Esc>:tabprevious<CR>i
-inoremap <C-tab>   <Esc>:tabnext<CR>i
-inoremap <C-t>     <Esc>:tabnew<CR>
+nnoremap <leader>t  :tabnew<CR>:NERDTreeToggle<CR>
+nnoremap H :tabnext<CR>
+nnoremap L :tabprev<CR>
 
 
 """"""""""""""""""""""""""""""""
