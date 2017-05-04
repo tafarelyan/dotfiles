@@ -150,7 +150,7 @@ nnoremap <c-h> <c-w><c-h>
 """"""""""""""""""""""""""""""""
 " Tab navigation
 """"""""""""""""""""""""""""""""
-nnoremap <leader>t  :tabnew<CR>:NERDTreeToggle<CR>
+nnoremap <leader>t  :tabnew<CR>::CtrlP<CR>
 nnoremap H :tabnext<CR>
 nnoremap L :tabprev<CR>
 
