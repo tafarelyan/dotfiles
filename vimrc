@@ -104,7 +104,7 @@ map <F9> :NERDTreeFind<CR>
 nmap <leader>p :CtrlP<cr>
 
 " Ignore irrelevant folders in CtrlP
-set wildignore+=*.pyc,venv,*.jpg
+set wildignore+=*.pyc,venv,*.png
 let g:ctrlp_custom_ignore = '\v[\/]\.git$'
 
 " Set laststatus for vim-airline
