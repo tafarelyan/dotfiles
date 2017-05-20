@@ -17,11 +17,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'kien/ctrlp.vim'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'airblade/vim-gitgutter'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-airline/vim-airline'
 Plug 'chrisbra/csv.vim'
+Plug 'scrooloose/nerdcommenter'
 
 " Colorschemes
 Plug 'altercation/vim-colors-solarized'
@@ -30,7 +30,6 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
 Plug 'nvie/vim-flake8', { 'for': 'python' }
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
-Plug 'mitsuhiko/vim-jinja'
 
 " Initialize plugin system
 call plug#end()
@@ -115,6 +114,9 @@ set foldlevelstart=1
 nnoremap <space> za
 let g:SimpylFold_docstring_preview = 1
 let g:SimpylFold_fold_docstring = 0
+
+" NERDCommenter config
+let g:NERDSpaceDelims = 2
 
 
 """"""""""""""""""""""""""""""""
