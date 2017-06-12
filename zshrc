@@ -79,3 +79,6 @@ alias plex="open -a safari http://192.168.1.109:32400"
 alias cv="python3 -m venv venv"
 alias sv="source venv/bin/activate"
 alias csv="python3 -m venv venv && source venv/bin/activate"
+
+# thefuck...for the LULZ
+eval "$(thefuck --alias)"
