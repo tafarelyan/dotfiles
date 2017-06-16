@@ -60,6 +60,9 @@ set number
 set numberwidth=5
 set ruler
 
+" Copy paste
+set clipboard=unnamed
+
 " I got the sick moves man
 set relativenumber
 
