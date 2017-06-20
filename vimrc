@@ -110,7 +110,6 @@ let g:ctrlp_custom_ignore = '\v[\/]\.git$'
 set laststatus=2
 
 " Folding Python code
-set foldlevelstart=1
 nnoremap <space> za
 let g:SimpylFold_docstring_preview = 1
 let g:SimpylFold_fold_docstring = 0
