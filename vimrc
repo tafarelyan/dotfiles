@@ -63,6 +63,9 @@ set ruler
 " I got the sick moves man
 set relativenumber
 
+" Yank with clipboard
+set clipboard+=unnamed
+
 "Encoding
 set encoding=utf-8
 
