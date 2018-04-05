@@ -78,7 +78,7 @@ alias torrents="open -a safari http://192.168.1.109:9091"
 alias plex="open -a safari http://192.168.1.109:32400"
 
 # Virtualenvs aliases
-alias sv="pipenv --python 3"
+alias sv="pipenv shell"
 alias csv="pipenv --python 3 && pipenv shell"
 
 # thefuck...for the LULZ
