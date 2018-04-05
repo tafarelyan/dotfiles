@@ -78,9 +78,8 @@ alias torrents="open -a safari http://192.168.1.109:9091"
 alias plex="open -a safari http://192.168.1.109:32400"
 
 # Virtualenvs aliases
-alias cv="python3 -m venv venv"
-alias sv="source venv/bin/activate"
-alias csv="python3 -m venv venv && source venv/bin/activate"
+alias sv="pipenv --python 3"
+alias csv="pipenv --python 3 && pipenv shell"
 
 # thefuck...for the LULZ
 eval "$(thefuck --alias)"
