@@ -30,6 +30,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
 Plug 'nvie/vim-flake8', { 'for': 'python' }
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
+Plug 'Glench/Vim-Jinja2-Syntax'
 
 " Initialize plugin system
 call plug#end()
