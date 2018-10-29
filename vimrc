@@ -13,15 +13,16 @@ call plug#begin('~/.vim/plugged')
 
 " Plugins
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'kien/ctrlp.vim'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'airblade/vim-gitgutter'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-airline/vim-airline'
 Plug 'chrisbra/csv.vim'
 Plug 'scrooloose/nerdcommenter'
+
+" Git workflow
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 " Colorschemes
 Plug 'altercation/vim-colors-solarized'
