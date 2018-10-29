@@ -63,7 +63,6 @@ source $ZSH/oh-my-zsh.sh
 # Unix
 alias ..="cd .."
 alias ...="cd ../.."
-alias ....="cd ../../.."
 
 # git
 alias gs="git status -sb"
@@ -75,10 +74,6 @@ alias home-server="ssh tafarel@192.168.1.109"
 alias webserver="open -a safari http://192.168.1.109:8080"
 alias torrents="open -a safari http://192.168.1.109:9091"
 alias plex="open -a safari http://192.168.1.109:32400"
-
-# Virtualenvs aliases
-alias sv="pipenv shell"
-alias csv="pipenv --python 3 && pipenv shell"
 
 # thefuck...for the LULZ
 eval "$(thefuck --alias)"
