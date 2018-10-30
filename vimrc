@@ -92,12 +92,6 @@ nmap <leader>gd :Gdiff<cr>
 nmap <leader>gc :Gcommit<cr>
 nmap <leader>gp :Gpush<cr>
 
-" Autoclose YCM helper window after user
-let g:ycm_autoclose_preview_window_after_completion=1
-
-" YCM default Python 3
-let g:ycm_python_binary_path='python'
-
 " Toggle nerdtree with F10
 map <F10> :NERDTreeToggle<CR>
 
