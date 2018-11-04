@@ -68,12 +68,7 @@ alias ...="cd ../.."
 alias gs="git status -sb"
 
 # Include custom aliases
-alias pi3="ssh pi@192.168.1.113"
-alias pizero="ssh pi@192.168.1.110"
 alias home-server="ssh tafarel@192.168.1.109"
-alias webserver="open -a safari http://192.168.1.109:8080"
-alias torrents="open -a safari http://192.168.1.109:9091"
-alias plex="open -a safari http://192.168.1.109:32400"
 
 # thefuck...for the LULZ
 eval "$(thefuck --alias)"
