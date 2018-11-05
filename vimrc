@@ -13,9 +13,6 @@ call plug#begin('~/.vim/plugged')
 
 " Plugins
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
-Plug 'tpope/vim-surround'
-Plug 'kien/ctrlp.vim'
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-airline/vim-airline'
 Plug 'chrisbra/csv.vim'
 Plug 'scrooloose/nerdcommenter'
@@ -26,12 +23,6 @@ Plug 'airblade/vim-gitgutter'
 
 " Colorschemes
 Plug 'altercation/vim-colors-solarized'
-
-" Python only plugins
-Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
-Plug 'nvie/vim-flake8', { 'for': 'python' }
-Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
-Plug 'Glench/Vim-Jinja2-Syntax'
 
 " Initialize plugin system
 call plug#end()
@@ -107,12 +98,6 @@ let g:ctrlp_custom_ignore = '\v[\/]\.git$'
 
 " Set laststatus for vim-airline
 set laststatus=2
-
-" Folding Python code
-set foldlevelstart=1
-nnoremap <space> za
-let g:SimpylFold_docstring_preview = 1
-let g:SimpylFold_fold_docstring = 0
 
 " NERDCommenter config
 let g:NERDSpaceDelims = 2
