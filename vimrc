@@ -16,6 +16,10 @@ Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'vim-airline/vim-airline'
 Plug 'chrisbra/csv.vim'
 Plug 'scrooloose/nerdcommenter'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-surround'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 " Git workflow
 Plug 'tpope/vim-fugitive'
@@ -23,6 +27,15 @@ Plug 'airblade/vim-gitgutter'
 
 " Colorschemes
 Plug 'altercation/vim-colors-solarized'
+
+" Python only plugins
+Plug 'nvie/vim-flake8', { 'for': 'python' }
+Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
+Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
+
+" Javascript only plugins
+Plug 'othree/yajs.vim', { 'for': 'javascript'}
 
 " Initialize plugin system
 call plug#end()
@@ -83,6 +96,12 @@ nmap <leader>gd :Gdiff<cr>
 nmap <leader>gc :Gcommit<cr>
 nmap <leader>gp :Gpush<cr>
 
+" Autoclose YCM helper window after used
+let g:ycm_autoclose_preview_window_after_completion=1
+
+" YCM default Python 3
+let g:ycm_python_binary_path='python'
+
 " Toggle nerdtree with F10
 map <F10> :NERDTreeToggle<CR>
 
@@ -99,6 +118,12 @@ let g:ctrlp_custom_ignore = '\v[\/]\.git$'
 " Set laststatus for vim-airline
 set laststatus=2
 
+" Folding Python code
+set foldlevelstart=1
+nnoremap <space> za
+let g:SimpylFold_docstring_preview = 1
+let g:SimpylFold_fold_docstring = 0
+
 " NERDCommenter config
 let g:NERDSpaceDelims = 2
 
@@ -107,6 +132,7 @@ let g:NERDSpaceDelims = 2
 " Filetype specific changes
 """"""""""""""""""""""""""""""""
 autocmd filetype html,css,htmldjango,javascript set shiftwidth=2 tabstop=2 softtabstop=2
+au BufNewFile,BufRead *.html,*htm,*shtml,*stm set ft=jinja
 
 
 """"""""""""""""""""""""""""""""
@@ -131,6 +157,30 @@ nnoremap <c-j> <c-w><c-j>
 nnoremap <c-k> <c-w><c-k>
 nnoremap <c-l> <c-w><c-l>
 nnoremap <c-h> <c-w><c-h>
+if exists('$TMUX')
+    function! TmuxOrSplitSwitch(wincmd, tmuxdir)
+        let previous_winnr = winnr()
+        silent! execute "wincmd " . a:wincmd
+        if previous_winnr == winnr()
+            call system("tmux select-pane -" . a:tmuxdir)
+            redraw!
+        endif
+    endfunction
+
+    let previous_title = substitute(system("tmux display-message -p '#{pane_title}'"), '\n', '', '')
+    let &t_ti = "\<Esc>]2;vim\<Esc>\\" . &t_ti
+    let &t_te = "\<Esc>]2;". previous_title . "\<Esc>\\" . &t_te
+
+    nnoremap <silent> <C-h> :call TmuxOrSplitSwitch('h', 'L')<cr>
+    nnoremap <silent> <C-j> :call TmuxOrSplitSwitch('j', 'D')<cr>
+    nnoremap <silent> <C-k> :call TmuxOrSplitSwitch('k', 'U')<cr>
+    nnoremap <silent> <C-l> :call TmuxOrSplitSwitch('l', 'R')<cr>
+else
+    map <C-h> <C-w>h
+    map <C-j> <C-w>j
+    map <C-k> <C-w>k
+    map <C-l> <C-w>l
+endif
 
 
 """"""""""""""""""""""""""""""""
