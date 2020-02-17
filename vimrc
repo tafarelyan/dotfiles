@@ -54,10 +54,7 @@ set backspace=2 " Backspace deletes like most programs in insert mode
 nmap <leader>q :qall<cr>
 nmap <leader>w :update<cr>
 
-" PEP 8 Python
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
+" Indentation
 set expandtab
 set autoindent
 
@@ -82,10 +79,10 @@ set noswapfile
 
 " Solarized theme for MacOS
 if has('macunix')
-    set background=dark
-    silent! colorscheme solarized
-    syntax on
-    set t_Co=32
+  set background=dark
+  silent! colorscheme solarized
+  syntax on
+  set t_Co=32
 endif
 
 
@@ -133,7 +130,8 @@ let g:NERDSpaceDelims = 2
 """"""""""""""""""""""""""""""""
 " Filetype specific changes
 """"""""""""""""""""""""""""""""
-autocmd filetype html,css,htmldjango,javascript set shiftwidth=2 tabstop=2 softtabstop=2
+autocmd filetype html,css,htmldjango,javascript,vim set shiftwidth=2 tabstop=2 softtabstop=2
+autocmd filetype python set shiftwidth=4 tabstop=4 softtabstop=4
 au BufNewFile,BufRead *.html,*htm,*shtml,*stm set ft=jinja
 
 
@@ -160,28 +158,28 @@ nnoremap <c-k> <c-w><c-k>
 nnoremap <c-l> <c-w><c-l>
 nnoremap <c-h> <c-w><c-h>
 if exists('$TMUX')
-    function! TmuxOrSplitSwitch(wincmd, tmuxdir)
-        let previous_winnr = winnr()
-        silent! execute "wincmd " . a:wincmd
-        if previous_winnr == winnr()
-            call system("tmux select-pane -" . a:tmuxdir)
-            redraw!
-        endif
-    endfunction
+  function! TmuxOrSplitSwitch(wincmd, tmuxdir)
+    let previous_winnr = winnr()
+    silent! execute "wincmd " . a:wincmd
+    if previous_winnr == winnr()
+      call system("tmux select-pane -" . a:tmuxdir)
+      redraw!
+    endif
+  endfunction
 
-    let previous_title = substitute(system("tmux display-message -p '#{pane_title}'"), '\n', '', '')
-    let &t_ti = "\<Esc>]2;vim\<Esc>\\" . &t_ti
-    let &t_te = "\<Esc>]2;". previous_title . "\<Esc>\\" . &t_te
+  let previous_title = substitute(system("tmux display-message -p '#{pane_title}'"), '\n', '', '')
+  let &t_ti = "\<Esc>]2;vim\<Esc>\\" . &t_ti
+  let &t_te = "\<Esc>]2;". previous_title . "\<Esc>\\" . &t_te
 
-    nnoremap <silent> <C-h> :call TmuxOrSplitSwitch('h', 'L')<cr>
-    nnoremap <silent> <C-j> :call TmuxOrSplitSwitch('j', 'D')<cr>
-    nnoremap <silent> <C-k> :call TmuxOrSplitSwitch('k', 'U')<cr>
-    nnoremap <silent> <C-l> :call TmuxOrSplitSwitch('l', 'R')<cr>
+  nnoremap <silent> <C-h> :call TmuxOrSplitSwitch('h', 'L')<cr>
+  nnoremap <silent> <C-j> :call TmuxOrSplitSwitch('j', 'D')<cr>
+  nnoremap <silent> <C-k> :call TmuxOrSplitSwitch('k', 'U')<cr>
+  nnoremap <silent> <C-l> :call TmuxOrSplitSwitch('l', 'R')<cr>
 else
-    map <C-h> <C-w>h
-    map <C-j> <C-w>j
-    map <C-k> <C-w>k
-    map <C-l> <C-w>l
+  map <C-h> <C-w>h
+  map <C-j> <C-w>j
+  map <C-k> <C-w>k
+  map <C-l> <C-w>l
 endif
 
 
