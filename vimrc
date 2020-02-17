@@ -15,7 +15,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'vim-airline/vim-airline'
 Plug 'chrisbra/csv.vim'
-Plug 'scrooloose/nerdcommenter'
+Plug 'preservim/nerdcommenter'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-surround'
@@ -118,7 +118,7 @@ let g:ctrlp_custom_ignore = '\v[\/]\.git$'
 set laststatus=2
 
 " Folding Python code
-set foldlevelstart=1
+set foldlevelstart=0
 nnoremap <space> za
 let g:SimpylFold_docstring_preview = 1
 let g:SimpylFold_fold_docstring = 0
