@@ -80,11 +80,13 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" Solarized theme
-set background=dark
-silent! colorscheme solarized
-syntax on
-set t_Co=32
+" Solarized theme for MacOS
+if has('macunix')
+    set background=dark
+    silent! colorscheme solarized
+    syntax on
+    set t_Co=32
+endif
 
 
 """"""""""""""""""""""""""""""""
