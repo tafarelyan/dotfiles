@@ -38,7 +38,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(pip tmux)
+plugins=()
 
 # User configuration
 
@@ -71,5 +71,6 @@ alias gs="git status -sb"
 # Include custom aliases
 alias home-server="ssh tafarel@192.168.1.109"
 
-# thefuck...for the LULZ
-eval "$(thefuck --alias)"
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+fi
