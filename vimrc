@@ -153,10 +153,7 @@ nnoremap <F5> :buffers<CR>:buffer<Space>
 """"""""""""""""""""""""""""""""
 set splitbelow
 set splitright
-nnoremap <c-j> <c-w><c-j>
-nnoremap <c-k> <c-w><c-k>
-nnoremap <c-l> <c-w><c-l>
-nnoremap <c-h> <c-w><c-h>
+
 if exists('$TMUX')
   function! TmuxOrSplitSwitch(wincmd, tmuxdir)
     let previous_winnr = winnr()
