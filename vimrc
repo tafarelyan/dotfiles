@@ -107,8 +107,9 @@ map <F10> :NERDTreeToggle<CR>
 " Current file in nerdtree
 map <F9> :NERDTreeFind<CR>
 
-" Too lazy to type :CtrlP
-nmap <leader>p :CtrlP<cr>
+" CtrlP settings
+let g:ctrl_map = '<c-p>'
+let g:ctrl_cmd = 'CtrlP'
 
 " Ignore irrelevant folders in CtrlP
 set wildignore+=*.pyc,venv,*.png
