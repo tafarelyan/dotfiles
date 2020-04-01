@@ -78,12 +78,13 @@ set nowritebackup
 set noswapfile
 
 " Solarized theme for MacOS
-if has('macunix')
-  set background=dark
-  silent! colorscheme solarized
-  syntax on
-  set t_Co=32
-endif
+syntax enable
+set background=dark
+colorscheme solarized
+set t_Co=256
+
+" Ctags configuration
+set tags=tags
 
 
 """"""""""""""""""""""""""""""""
