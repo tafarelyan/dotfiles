@@ -32,7 +32,6 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'nvie/vim-flake8', { 'for': 'python' }
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'Glench/Vim-Jinja2-Syntax'
-Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
 
 " Javascript only plugins
 Plug 'othree/yajs.vim', { 'for': 'javascript'}
@@ -120,10 +119,8 @@ let g:ctrlp_custom_ignore = '\v[\/]\.git$'
 set laststatus=2
 
 " Folding Python code
-set foldlevelstart=0
+" set foldmethod=indent
 nnoremap <space> za
-let g:SimpylFold_docstring_preview = 1
-let g:SimpylFold_fold_docstring = 0
 
 " NERDCommenter config
 let g:NERDSpaceDelims = 2
