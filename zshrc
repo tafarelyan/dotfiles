@@ -69,6 +69,8 @@ alias ...="cd ../.."
 alias gs="git status -sb"
 
 # Include custom aliases
+alias csv="python3 -m venv venv && source venv/bin/activate"
+alias sv="source venv/bin/activate"
 alias home-server="ssh tafarel@192.168.1.109"
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
