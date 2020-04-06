@@ -74,6 +74,6 @@ alias sv="source venv/bin/activate"
 alias home-server="ssh tafarel@192.168.1.109"
 alias vpn="sudo /home/tafarel/.vpn/forticlientsslvpn &"
 
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+if [[ "" == "Linux" ]]; then
+  export AWS_VAULT_BACKEND=secret-service
 fi
